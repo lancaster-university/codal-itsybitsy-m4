@@ -28,7 +28,7 @@ DEALINGS IN THE SOFTWARE.
   */
 
 #include "CodalConfig.h"
-#include "BrainPadIO.h"
+#include "ItsyIO.h"
 
 using namespace codal;
 
@@ -40,7 +40,7 @@ using namespace codal;
   * Accepts a sequence of unique ID's used to distinguish events raised
   * by MicroBitPin instances on the default EventModel.
   */
-BrainPadIO::BrainPadIO() :
+ItsyIO::ItsyIO() :
     scl (ID_PIN_SCL, PB_6, PIN_CAPABILITY_AD),
     sda (ID_PIN_SDA, PB_7, PIN_CAPABILITY_AD),
     buttonUp (ID_PIN_BUTTON_UP, PA_15, PIN_CAPABILITY_DIGITAL),

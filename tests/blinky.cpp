@@ -1,6 +1,6 @@
-#include "BrainPad.h"
+#include "Itsy.h"
 
-BrainPad bp;
+Itsy bp;
 
 int main()
 {

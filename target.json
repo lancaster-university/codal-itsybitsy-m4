@@ -27,7 +27,7 @@
         "CODAL_TIMESTAMP":"uint64_t",
         "PROCESSOR_WORD_TYPE":"uint32_t"
     },
-    "definitions":"-DSTM32F4 -DSTM32F401xE -include codal-big-brainpad/inc/localconf.h",
+    "definitions":"-DSTM32F4 -DSTM32F401xE -include codal-itsybitsy-m4/inc/localconf.h",
     "cmake_definitions":{
     },
     "cpu_opts":"-mcpu=cortex-m4 -mthumb",

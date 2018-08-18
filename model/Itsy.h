@@ -41,7 +41,7 @@ DEALINGS IN THE SOFTWARE.
 #include "MultiButton.h"
 //#include "MbedI2C.h"
 //#include "MbedSerial.h"
-#include "BrainPadIO.h"
+#include "ItsyIO.h"
 #include "CodalFiber.h"
 #include "MessageBus.h"
 
@@ -63,12 +63,12 @@ DEALINGS IN THE SOFTWARE.
  */
 namespace codal
 {
-    class BrainPad : public CodalComponent
+    class Itsy : public CodalComponent
     {
         public:
             ZTimer         timer;
             MessageBus                  messageBus;
-            BrainPadIO                  io;
+            ItsyIO                  io;
             //codal::_mbed::I2C           i2c;
 
             Synthesizer synth0;
@@ -88,7 +88,7 @@ namespace codal
             /**
              * Constructor.
              */
-            BrainPad();
+            Itsy();
 
             /**
              * Post constructor initialisation method.
@@ -147,7 +147,7 @@ namespace codal
      * @return MICROBIT_OK on success, MICROBIT_INVALID_PARAMETER milliseconds is less than zero.
      *
      */
-    inline void BrainPad::sleep(uint32_t milliseconds)
+    inline void Itsy::sleep(uint32_t milliseconds)
     {
         fiber_sleep(milliseconds);
     }
@@ -159,13 +159,13 @@ namespace codal
      *
      * @note This will value overflow after 1.6 months.
      */
-    inline unsigned long BrainPad::systemTime()
+    inline unsigned long Itsy::systemTime()
     {
         return system_timer_current_time();
     }
 }
 
-void brainpad_dmesg_flush();
+void itsy_dmesg_flush();
 
 using namespace codal;
 

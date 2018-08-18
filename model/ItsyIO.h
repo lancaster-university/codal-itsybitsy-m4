@@ -79,7 +79,7 @@ namespace codal
     /**
      * Represents a collection of all I/O pins exposed by the device.
      */
-    class BrainPadIO
+    class ItsyIO
     {
         public:
 
@@ -108,7 +108,7 @@ namespace codal
             /**
              * Constructor.
              */
-            BrainPadIO();
+            ItsyIO();
     };
 }
 

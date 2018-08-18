@@ -23,12 +23,12 @@ DEALINGS IN THE SOFTWARE.
 */
 
 
-#include "BrainPad.h"
+#include "Itsy.h"
 #include "Timer.h"
 
 using namespace codal;
 
-static BrainPad *device_instance = NULL;
+static Itsy *device_instance = NULL;
 
 /**
   * Constructor.
@@ -36,7 +36,7 @@ static BrainPad *device_instance = NULL;
   * Create a representation of a GenuinoZero device, which includes member variables
   * that represent various device drivers used to control aspects of the micro:bit.
   */
-BrainPad::BrainPad() :
+Itsy::Itsy() :
     timer(),
     messageBus(),
     io(),
@@ -74,7 +74,7 @@ BrainPad::BrainPad() :
   * @note This method must be called before user code utilises any functionality
   *       contained within the GenuinoZero class.
   */
-int BrainPad::init()
+int Itsy::init()
 {
     if (status & DEVICE_INITIALIZED)
         return DEVICE_NOT_SUPPORTED;
@@ -95,7 +95,7 @@ int BrainPad::init()
     // Seed our random number generator
     //seedRandom();
 
-    codal_dmesg_set_flush_fn(brainpad_dmesg_flush);
+    codal_dmesg_set_flush_fn(itsy_dmesg_flush);
     status |= DEVICE_COMPONENT_STATUS_IDLE_TICK;
 
     synth0.setSampleRate(pwm.getSampleRate());
@@ -122,11 +122,11 @@ int BrainPad::init()
   * We use this for any low priority, backgrounf housekeeping.
   *
   */
-void BrainPad::idleCallback()
+void Itsy::idleCallback()
 {
     codal_dmesg_flush();
 }
 
-void brainpad_dmesg_flush()
+void itsy_dmesg_flush()
 {
 }
