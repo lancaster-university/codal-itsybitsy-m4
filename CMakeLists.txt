@@ -25,7 +25,7 @@ add_library(codal-itsybitsy-m4 ${TOP_LEVEL_SOURCE_FILES} ${MODEL_SOURCE_FILES})
 target_link_libraries(
     codal-itsybitsy-m4
     codal-core
-    codal-stm32
+    codal-samd
 )
 
 # expose it to parent cmake.
