@@ -72,6 +72,13 @@ SECTIONS
         _ebss = .;
     } >RAM
 
+    .heap (NOLOAD) :
+	{
+		. = ALIGN(4);
+		__end__ = . ;
+		. = ORIGIN(RAM) + LENGTH(RAM) - 10K;
+	} > RAM
+
     /* this just checks there is enough RAM for a minimal stack */
     .stack :
     {

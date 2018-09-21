@@ -34,7 +34,7 @@
     "asm_flags":"-fno-exceptions -fno-unwind-tables",
     "c_flags":"-std=c99 -fwrapv -Warray-bounds",
     "cpp_flags":"-std=c++11 -fwrapv -fno-rtti -fno-threadsafe-statics -fno-exceptions -fno-unwind-tables -Wl,--gc-sections -Wl,--sort-common -Wl,--sort-section=alignment -Wno-array-bounds",
-    "linker_flags":"-Wl,--no-wchar-size-warning -Wl,--gc-sections -mcpu=cortex-m4 -mthumb",
+    "linker_flags":"-Wl,--no-wchar-size-warning -Wl,--gc-sections -mcpu=cortex-m4 -mthumb -u Reset_Handler",
     "libraries":[
         {
             "name":"codal-core",
