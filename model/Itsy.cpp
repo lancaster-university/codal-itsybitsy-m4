@@ -39,22 +39,10 @@ static Itsy *device_instance = NULL;
 Itsy::Itsy() :
     timer(),
     messageBus(),
-    io(),
-    synth0(SYNTHESIZER_SAMPLE_RATE, true),
-    synth1(SYNTHESIZER_SAMPLE_RATE, true),
-    pwm(io.snd, mixer),
-    sws(io.tx),
-    pktSerial(io.tx, sws),
-    jackRouter(io.tx, io.sense, io.hpEn, io.bzEn, io.pwrEn, pktSerial),
-    buttonUp(io.buttonUp, DEVICE_ID_BUTTON_UP, DEVICE_BUTTON_ALL_EVENTS, ACTIVE_LOW, PullMode::Up),
-    buttonDown(io.buttonDown, DEVICE_ID_BUTTON_DOWN, DEVICE_BUTTON_ALL_EVENTS, ACTIVE_LOW, PullMode::Up),
-    buttonLeft(io.buttonLeft, DEVICE_ID_BUTTON_LEFT, DEVICE_BUTTON_ALL_EVENTS, ACTIVE_LOW, PullMode::Up),
-    buttonRight(io.buttonRight, DEVICE_ID_BUTTON_RIGHT, DEVICE_BUTTON_ALL_EVENTS, ACTIVE_LOW, PullMode::Up)
+    io()
 {
     // Clear our status
     status = 0;
-
-    io.buzzer.getDigitalValue();
 
     device_instance = this;
 }
@@ -94,24 +82,6 @@ int Itsy::init()
 
     // Seed our random number generator
     //seedRandom();
-
-    codal_dmesg_set_flush_fn(itsy_dmesg_flush);
-    status |= DEVICE_COMPONENT_STATUS_IDLE_TICK;
-
-    synth0.setSampleRate(pwm.getSampleRate());
-    synth0.setTone(Synthesizer::SineTone);
-
-    synth1.setSampleRate(pwm.getSampleRate());
-    synth1.setTone(Synthesizer::SineTone);
-
-    mixer.addChannel(synth0.output);
-    mixer.addChannel(synth1.output);
-
-    //synth.setVolume(400);
-    //synth.setFrequency(400);
-
-    //io.snd1.setAnalogPeriodUs(1000000/440);
-    //io.snd1.setAnalogValue(500);
 
 
     return DEVICE_OK;

@@ -28,6 +28,7 @@
  *******************************************************************************
  */
 
+#if 0
 #include "PeripheralPins.h"
 
 typedef enum {
@@ -262,3 +263,4 @@ MBED_WEAK const PinMap PinMap_USB[] = {
     {PA_12, USB_OTG_FS_PERIPH_BASE, STM_PIN_DATA(STM_MODE_AF_PP, GPIO_NOPULL, GPIO_AF10_OTG_FS)},
     {NC,    NC,    0}
 };
+#endif

@@ -45,12 +45,9 @@ DEALINGS IN THE SOFTWARE.
 #include "CodalFiber.h"
 #include "MessageBus.h"
 
-#include "ZPWM.h"
 #include "Synthesizer.h"
 #include "Mixer.h"
 #include "JackRouter.h"
-
-#include "ZSingleWireSerial.h"
 
 // Status flag values
 #define DEVICE_INITIALIZED                    0x01
@@ -69,21 +66,7 @@ namespace codal
             ZTimer         timer;
             MessageBus                  messageBus;
             ItsyIO                  io;
-            //codal::_mbed::I2C           i2c;
 
-            Synthesizer synth0;
-            Synthesizer synth1;
-            Mixer mixer;
-            ZPWM pwm;
-
-            ZSingleWireSerial sws;
-            PktSerial pktSerial;
-            JackRouter jackRouter;
-
-            Button buttonUp;
-            Button buttonDown;
-            Button buttonLeft;
-            Button buttonRight;
 
             /**
              * Constructor.
