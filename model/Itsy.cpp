@@ -39,7 +39,8 @@ static Itsy *device_instance = NULL;
 Itsy::Itsy() :
     timer(),
     messageBus(),
-    io()
+    io(),
+    spi(io.mosi, io.miso, io.sck)
 {
     // Clear our status
     status = 0;

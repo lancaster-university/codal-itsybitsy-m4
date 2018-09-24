@@ -49,6 +49,9 @@ DEALINGS IN THE SOFTWARE.
 #include "Mixer.h"
 #include "JackRouter.h"
 
+#include "ZSPI.h"
+#include "SAMDDMAC.h"
+
 // Status flag values
 #define DEVICE_INITIALIZED                    0x01
 
@@ -66,6 +69,8 @@ namespace codal
             ZTimer         timer;
             MessageBus                  messageBus;
             ItsyIO                  io;
+            SAMDDMAC dmac;
+            ZSPI spi;
 
 
             /**
