@@ -12,3 +12,4 @@
 
 
 #define CODAL_CPU_MHZ 120
+#define SAMD_PIN_ARRAY 1
