@@ -1,16 +1,16 @@
 #include "Itsy.h"
 
-Itsy bp;
+Itsy bitsySpider;
 
 int main()
 {
-    bp.init();
+    bitsySpider.init();
 
     int state = 0;
 
     while(1)
     {
-        bp.io.ledRed.setDigitalValue(state);
+        bitsySpider.io.led.setDigitalValue(state);
         fiber_sleep(1000);
         state = !state;
     }
