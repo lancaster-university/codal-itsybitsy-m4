@@ -47,10 +47,12 @@ DEALINGS IN THE SOFTWARE.
 #define ID_PIN_MOSI          (DEVICE_ID_IO_P0 + 7)
 #define ID_PIN_MISO          (DEVICE_ID_IO_P0 + 8)
 #define ID_PIN_LED          (DEVICE_ID_IO_P0 + 9)
+#define ID_PIN_D1          (DEVICE_ID_IO_P0 + 16)
 #define ID_PIN_D2          (DEVICE_ID_IO_P0 + 12)
 #define ID_PIN_D3          (DEVICE_ID_IO_P0 + 13)
 #define ID_PIN_D4          (DEVICE_ID_IO_P0 + 14)
 #define ID_PIN_D5          (DEVICE_ID_IO_P0 + 15)
+#define ID_PIN_D7          (DEVICE_ID_IO_P0 + 15)
 
 namespace codal
 {
@@ -62,7 +64,7 @@ namespace codal
         public:
             ZPin        a0, a1, a2, a3, a4, a5;
             ZPin        sck, mosi, miso;
-            ZPin        d2, d3, d4;
+            ZPin        d1, d2, d3, d4, d7;
             ZPin        led;
 
             /**
