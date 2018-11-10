@@ -69,7 +69,7 @@ namespace codal
             ZTimer         timer;
             MessageBus                  messageBus;
             ItsyIO                  io;
-            SAMDDMAC dmac;
+            DmaFactory dmac;
             ZSPI spi;
 
 
