@@ -51,6 +51,7 @@ DEALINGS IN THE SOFTWARE.
 
 #include "ZSPI.h"
 #include "SAMDDMAC.h"
+#include "SAMDTimer.h"
 
 // Status flag values
 #define DEVICE_INITIALIZED                    0x01
@@ -66,7 +67,7 @@ namespace codal
     class Itsy : public CodalComponent
     {
         public:
-            ZTimer         timer;
+            SAMDTimer         timer;
             MessageBus                  messageBus;
             ItsyIO                  io;
             DmaFactory dmac;

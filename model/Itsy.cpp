@@ -37,7 +37,7 @@ static Itsy *device_instance = NULL;
   * that represent various device drivers used to control aspects of the micro:bit.
   */
 Itsy::Itsy() :
-    timer(),
+    timer(TC0, TC0_IRQn),
     messageBus(),
     io(),
     spi(io.mosi, io.miso, io.sck)
@@ -69,8 +69,6 @@ int Itsy::init()
         return DEVICE_NOT_SUPPORTED;
 
     status |= DEVICE_INITIALIZED;
-
-    timer.init();
 
     // Bring up fiber scheduler.
     scheduler_init(messageBus);
