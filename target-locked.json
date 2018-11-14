@@ -4,6 +4,10 @@
     "c_flags": "-std=c99 -fwrapv -Warray-bounds", 
     "cmake_definitions": {}, 
     "config": {
+        "APP_START_ADDR": "0x00004000", 
+        "BOOTLOADER_END_ADDR": "0x00004000", 
+        "BOOTLOADER_START_ADDR": "0x00000000", 
+        "CODAL_CPU_MHZ": 120, 
         "CODAL_DEBUG": "CODAL_DEBUG_DISABLED", 
         "CODAL_TIMESTAMP": "uint64_t", 
         "DEVICE_COMPONENT_COUNT": 60, 
@@ -18,27 +22,37 @@
         "DEVICE_STACK_SIZE": 10240, 
         "DEVICE_TAG": 0, 
         "DEVICE_USB": 0, 
+        "DEVICE_USB_ENDPOINTS": 6, 
         "EVENT_LISTENER_DEFAULT_FLAGS": "MESSAGE_BUS_LISTENER_QUEUE_IF_BUSY", 
         "MESSAGE_BUS_LISTENER_MAX_QUEUE_DEPTH": 10, 
         "PROCESSOR_WORD_TYPE": "uint32_t", 
+        "PROTOTYPE_SERCOM_I2CM_SYNC": "SERCOM1", 
+        "PROTOTYPE_SERCOM_SPI_M_SYNC": "SERCOM0", 
+        "PROTOTYPE_SERCOM_USART_ASYNC": "SERCOM2", 
+        "SAMD51": 1, 
+        "SAMD_PIN_ARRAY": 1, 
         "SCHEDULER_TICK_PERIOD_US": 4000, 
-        "USE_ACCEL_LSB": 0
+        "UF2_INFO_ADDR": "(const char*)(*(uint32_t*)(BOOTLOADER_END_ADDR - (16 * 4) + (4 * 4)))", 
+        "USB_EP_FLAG_NO_AUTO_ZLP": "0x01", 
+        "USB_MAX_PKT_SIZE": 64, 
+        "USE_ACCEL_LSB": 0, 
+        "USE_FULL_ASSERT": 1
     }, 
     "cpp_flags": "-std=c++11 -fwrapv -fno-rtti -fno-threadsafe-statics -fno-exceptions -fno-unwind-tables -Wl,--gc-sections -Wl,--sort-common -Wl,--sort-section=alignment -Wno-array-bounds", 
     "cpu_opts": "-mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16", 
-    "definitions": "-DSAMD51 -DSAMDX1 -D__SAMD51G19A__ -include codal-itsybitsy-m4/inc/localconf.h", 
+    "definitions": " -DSAMDX1 -D__SAMD51G19A__", 
     "device": "ITSYBITSY_M4", 
     "generate_bin": true, 
     "generate_hex": true, 
     "libraries": [
         {
-            "branch": "1be49b36c2c1a0a950eb1b330e70fa27696b4550", 
+            "branch": "081d0340e50d3b038c89008b54cdf6620dc2e04b", 
             "name": "codal-core", 
             "type": "git", 
             "url": "https://github.com/lancaster-university/codal-core"
         }, 
         {
-            "branch": "6302695a325245f31d6f058532ae3fa8684b97f3", 
+            "branch": "3ced0a95be56630c3346f326d6471279224db510", 
             "name": "codal-samd", 
             "type": "git", 
             "url": "https://github.com/lancaster-university/codal-samd"
@@ -47,6 +61,6 @@
     "linker_flags": "-Wl,--no-wchar-size-warning -Wl,--gc-sections -mcpu=cortex-m4 -mthumb -u Reset_Handler", 
     "post_process": "python ./utils/uf2conv.py  -b 0x00004000 -o <OUTPUT_HEX_DESTINATION>/<OUTPUT_HEX_NAME>.uf2 -c <OUTPUT_BIN_LOCATION>", 
     "processor": "ATSAMD51G19A", 
-    "snapshot_version": "v0.0.8", 
+    "snapshot_version": "v0.0.9", 
     "toolchain": "ARM_GCC"
 }
