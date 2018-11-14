@@ -41,6 +41,7 @@ Itsy::Itsy() :
     messageBus(),
     io(),
     spi(io.mosi, io.miso, io.sck),
+    i2c(io.sda, io.scl),
     sws(io.a4),
     jacdac(io.a4, sws),
     protocol(jacdac)

@@ -39,8 +39,7 @@ DEALINGS IN THE SOFTWARE.
 
 #include "Button.h"
 #include "MultiButton.h"
-//#include "MbedI2C.h"
-//#include "MbedSerial.h"
+#include "ZI2C.h"
 #include "ItsyIO.h"
 #include "CodalFiber.h"
 #include "MessageBus.h"
@@ -76,6 +75,7 @@ namespace codal
             ItsyIO                  io;
             DmaFactory              dmac;
             ZSPI                    spi;
+            ZI2C                    i2c;
 
             ZSingleWireSerial       sws;
             JACDAC                  jacdac;
