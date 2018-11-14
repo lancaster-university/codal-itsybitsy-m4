@@ -53,6 +53,10 @@ DEALINGS IN THE SOFTWARE.
 #include "SAMDDMAC.h"
 #include "SAMDTimer.h"
 
+#include "ZSingleWireSerial.h"
+#include "JACDAC.h"
+#include "JDProtocol.h"
+
 // Status flag values
 #define DEVICE_INITIALIZED                    0x01
 
@@ -67,11 +71,15 @@ namespace codal
     class Itsy : public CodalComponent
     {
         public:
-            SAMDTimer         timer;
-            MessageBus                  messageBus;
+            SAMDTimer               timer;
+            MessageBus              messageBus;
             ItsyIO                  io;
-            DmaFactory dmac;
-            ZSPI spi;
+            DmaFactory              dmac;
+            ZSPI                    spi;
+
+            ZSingleWireSerial       sws;
+            JACDAC                  jacdac;
+            JDProtocol              protocol;
 
 
             /**

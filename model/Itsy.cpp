@@ -40,7 +40,10 @@ Itsy::Itsy() :
     timer(TC0, TC0_IRQn),
     messageBus(),
     io(),
-    spi(io.mosi, io.miso, io.sck)
+    spi(io.mosi, io.miso, io.sck),
+    sws(io.a4),
+    jacdac(io.a4, sws),
+    protocol(jacdac)
 {
     // Clear our status
     status = 0;
