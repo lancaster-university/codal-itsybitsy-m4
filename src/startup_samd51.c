@@ -625,6 +625,8 @@ __attribute__((section(".vectors"), used)) const DeviceVectors exception_table
 #endif
 };
 
+void cpu_init(void);
+
 /**
  * \brief This is the code that gets called on processor reset.
  * To initialize the device, and call the main() routine.
@@ -658,6 +660,8 @@ void Reset_Handler(void)
 	__DSB();
 	__ISB();
 #endif
+
+        cpu_init();
 
 	/* Initialize the C library */
 	__libc_init_array();
