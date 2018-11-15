@@ -26,6 +26,11 @@ DEALINGS IN THE SOFTWARE.
 #include "Itsy.h"
 #include "Timer.h"
 
+extern "C"
+{
+    #include "clocks.h"
+}
+
 using namespace codal;
 
 static Itsy *device_instance = NULL;
@@ -71,6 +76,9 @@ int Itsy::init()
 {
     if (status & DEVICE_INITIALIZED)
         return DEVICE_NOT_SUPPORTED;
+
+    clock_init();
+    timer.enable();
 
     status |= DEVICE_INITIALIZED;
 
