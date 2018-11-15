@@ -2,6 +2,7 @@
 #include "codal_target_hal.h"
 #include "CodalDmesg.h"
 #include "CodalCompat.h"
+#include "Timer.h"
 
 void target_enable_irq()
 {
@@ -23,6 +24,10 @@ uint32_t* const serial_start = (uint32_t *)0x008061FC;
 uint32_t target_get_serial()
 {
     return *serial_start;
+}
+
+void target_wait_us(unsigned long us) {
+    codal::system_timer_wait_us(us);
 }
 
 void target_wait(uint32_t milliseconds)
