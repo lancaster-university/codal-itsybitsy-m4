@@ -77,9 +77,6 @@ int Itsy::init()
     if (status & DEVICE_INITIALIZED)
         return DEVICE_NOT_SUPPORTED;
 
-    clock_init();
-    timer.enable();
-
     status |= DEVICE_INITIALIZED;
 
     // Bring up fiber scheduler.
