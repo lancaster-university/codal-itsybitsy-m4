@@ -43,7 +43,7 @@ Itsy::Itsy() :
     spi(io.mosi, io.miso, io.sck),
     i2c(io.sda, io.scl),
     sws(io.a4),
-    jacdac(io.a4, sws),
+    jacdac(sws),
     protocol(jacdac)
 {
     // Clear our status
