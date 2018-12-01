@@ -40,7 +40,7 @@
     }, 
     "cpp_flags": "-std=c++11 -fwrapv -fno-rtti -fno-threadsafe-statics -fno-exceptions -fno-unwind-tables -Wl,--gc-sections -Wl,--sort-common -Wl,--sort-section=alignment -Wno-array-bounds", 
     "cpu_opts": "-mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16", 
-    "definitions": " -DSAMDX1 -D__SAMD51G19A__", 
+    "definitions": " -DSAMDX1 -D__SAMD51J19A__", 
     "device": "ITSYBITSY_M4", 
     "generate_bin": true, 
     "generate_hex": true, 
@@ -52,7 +52,7 @@
             "url": "https://github.com/lancaster-university/codal-core"
         }, 
         {
-            "branch": "f0886face9db4f1b70dee7f92c9d5c97575cff5a", 
+            "branch": "502b3598d912a4544e915a2bd3461eaf7f6ecc75", 
             "name": "codal-samd", 
             "type": "git", 
             "url": "https://github.com/lancaster-university/codal-samd"
@@ -61,6 +61,6 @@
     "linker_flags": "-Wl,--no-wchar-size-warning -Wl,--gc-sections -mcpu=cortex-m4 -mthumb -u Reset_Handler", 
     "post_process": "python ./utils/uf2conv.py  -b 0x00004000 -o <OUTPUT_HEX_DESTINATION>/<OUTPUT_HEX_NAME>.uf2 -c <OUTPUT_BIN_LOCATION>", 
     "processor": "ATSAMD51G19A", 
-    "snapshot_version": "v0.0.12", 
+    "snapshot_version": "v0.0.13", 
     "toolchain": "ARM_GCC"
 }
