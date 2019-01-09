@@ -26,7 +26,6 @@
         "DEVICE_USB":0,
         "CODAL_TIMESTAMP":"uint64_t",
         "PROCESSOR_WORD_TYPE":"uint32_t",
-
         "SAMD51":1,
         "SAMD_PIN_ARRAY":1,
         "USE_FULL_ASSERT": 1,
@@ -39,6 +38,8 @@
         "DEVICE_USB_ENDPOINTS": 6,
         "CODAL_CPU_MHZ": 120,
         "SAMD_PIN_ARRAY":1,
+        "USB_DEFAULT_VID": "0x03eb",
+        "USB_DEFAULT_PID": "0x2066",
         "PROTOTYPE_SERCOM_SPI_M_SYNC": "SERCOM0",
         "PROTOTYPE_SERCOM_I2CM_SYNC": "SERCOM1",
         "PROTOTYPE_SERCOM_USART_ASYNC": "SERCOM2"
