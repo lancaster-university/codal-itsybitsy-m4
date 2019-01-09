@@ -33,6 +33,8 @@
         "SAMD_PIN_ARRAY": 1, 
         "SCHEDULER_TICK_PERIOD_US": 4000, 
         "UF2_INFO_ADDR": "(const char*)(*(uint32_t*)(BOOTLOADER_END_ADDR - (16 * 4) + (4 * 4)))", 
+        "USB_DEFAULT_PID": "0x2066", 
+        "USB_DEFAULT_VID": "0x03eb", 
         "USB_EP_FLAG_NO_AUTO_ZLP": "0x01", 
         "USB_MAX_PKT_SIZE": 64, 
         "USE_ACCEL_LSB": 0, 
@@ -46,13 +48,13 @@
     "generate_hex": true, 
     "libraries": [
         {
-            "branch": "f205e66c9894d70ce8d49137b5715d8f928a1701", 
+            "branch": "5ac59869975aa8869770e2ccc9ed51a5f834b9c2", 
             "name": "codal-core", 
             "type": "git", 
             "url": "https://github.com/lancaster-university/codal-core"
         }, 
         {
-            "branch": "2696625257c6f3115839768fe102404b142fbcf3", 
+            "branch": "728d80cff72bb5806f5341a6d62592954011b347", 
             "name": "codal-samd", 
             "type": "git", 
             "url": "https://github.com/lancaster-university/codal-samd"
@@ -61,6 +63,6 @@
     "linker_flags": "-Wl,--no-wchar-size-warning -Wl,--gc-sections -mcpu=cortex-m4 -mthumb -u Reset_Handler", 
     "post_process": "python ./utils/uf2conv.py  -b 0x00004000 -o <OUTPUT_HEX_DESTINATION>/<OUTPUT_HEX_NAME>.uf2 -c <OUTPUT_BIN_LOCATION>", 
     "processor": "ATSAMD51G19A", 
-    "snapshot_version": "v0.0.14", 
+    "snapshot_version": "v0.0.15", 
     "toolchain": "ARM_GCC"
 }
