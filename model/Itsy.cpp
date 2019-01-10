@@ -37,7 +37,8 @@ static Itsy *device_instance = NULL;
   * that represent various device drivers used to control aspects of the micro:bit.
   */
 Itsy::Itsy() :
-    timer(TC0, TC0_IRQn),
+    tcTimer(TC0, TC0_IRQn),
+    timer(tcTimer),
     messageBus(),
     io(),
     spi(io.mosi, io.miso, io.sck),

@@ -49,7 +49,8 @@ DEALINGS IN THE SOFTWARE.
 
 #include "ZSPI.h"
 #include "SAMDDMAC.h"
-#include "SAMDTimer.h"
+#include "SAMDTCCTimer.h"
+#include "SAMDTCTimer.h"
 
 #include "ZSingleWireSerial.h"
 #include "JACDAC.h"
@@ -69,7 +70,8 @@ namespace codal
     class Itsy : public CodalComponent
     {
         public:
-            SAMDTimer               timer;
+            SAMDTCTimer             tcTimer;
+            Timer                   timer;
             MessageBus              messageBus;
             ItsyIO                  io;
             DmaFactory              dmac;
