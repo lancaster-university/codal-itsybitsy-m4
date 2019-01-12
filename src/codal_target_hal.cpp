@@ -53,9 +53,16 @@ int target_random(int max)
     return codal::random(max);
 }
 
+#ifdef SAMD21
+#define DBL_TAP_PTR ((volatile uint32_t *)(HMCRAMC0_ADDR + HMCRAMC0_SIZE - 4))
+#endif
+#ifdef SAMD51
+#define DBL_TAP_PTR ((volatile uint32_t *)(HSRAM_ADDR + HSRAM_SIZE - 4))
+#endif
+
 void target_reset()
 {
-    // TODO skip bootloader
+    *DBL_TAP_PTR = 0xf02669ef;
     NVIC_SystemReset();
 }
 
