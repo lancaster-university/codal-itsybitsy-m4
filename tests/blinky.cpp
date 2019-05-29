@@ -10,7 +10,7 @@ int main()
 
     while(1)
     {
-        bp.io.ledRed.setDigitalValue(state);
+        bp.io.led.setDigitalValue(state);
         fiber_sleep(1000);
         state = !state;
     }
