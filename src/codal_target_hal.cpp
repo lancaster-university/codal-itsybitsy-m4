@@ -28,9 +28,9 @@ void target_wait_for_event()
 
 #define SERIALA ((uint32_t *)0x008061FC)
 #define SERIALB ((uint32_t *)0x00806010)
-uint32_t target_get_serial()
+uint64_t target_get_serial()
 {
-    return SERIALA[0] ^ (SERIALB[0]*17) ^ (SERIALB[1]*13) ^ (SERIALB[2]*19);
+    return *SERIALA | (*SERIALB << 32);
 }
 
 void target_wait(uint32_t milliseconds)
