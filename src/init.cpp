@@ -20,6 +20,7 @@ extern "C" void cpu_init()
 
     target_init();
 
-    // TODO
-
+    // Disable automatic flash writes - we don't want code accidently writing to flash
+    // This should be default, but better safe than sorry.
+    NVMCTRL->CTRLA.bit.WMODE = NVMCTRL_CTRLA_WMODE_MAN;
 }
