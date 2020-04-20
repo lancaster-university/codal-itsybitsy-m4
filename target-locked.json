@@ -43,8 +43,8 @@
     }, 
     "cpp_flags": "-std=c++11 -fwrapv -fno-rtti -fno-threadsafe-statics -fno-exceptions -fno-unwind-tables -Wl,--gc-sections -Wl,--sort-common -Wl,--sort-section=alignment -Wno-array-bounds", 
     "cpu_opts": "-mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16", 
-    "definitions": " -DSAMDX1 -D__SAMD51J19A__", 
-    "device": "ITSYBITSY_M4", 
+    "definitions": " -DSAMDX1 -D__SAMD51J18A__", 
+    "device": "BBS_M4", 
     "generate_bin": true, 
     "generate_hex": true, 
     "libraries": [
@@ -63,7 +63,7 @@
     ], 
     "linker_flags": "-Wl,--no-wchar-size-warning -Wl,--gc-sections -mcpu=cortex-m4 -mthumb -u Reset_Handler", 
     "post_process": "python ./utils/uf2conv.py  -b 0x00004000 -o <OUTPUT_HEX_DESTINATION>/<OUTPUT_HEX_NAME>.uf2 -c <OUTPUT_BIN_LOCATION>", 
-    "processor": "ATSAMD51G19A", 
+    "processor": "ATSAMD51G18A", 
     "snapshot_version": "v0.2.7", 
     "toolchain": "ARM_GCC"
 }
