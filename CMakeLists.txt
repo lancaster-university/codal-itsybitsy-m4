@@ -1,4 +1,4 @@
-project(codal-itsybitsy-m4)
+project(codal-bbs-m4)
 
 include("${CODAL_UTILS_LOCATION}")
 
@@ -12,21 +12,21 @@ RECURSIVE_FIND_FILE(MODEL_SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/model" "*.c*
 
 string(TOLOWER "${CODAL_TARGET_PROCESSOR}" TARGET_PROCESSOR)
 
-set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -T\"${CMAKE_CURRENT_LIST_DIR}/ld/samd51g19a_flash.ld\"" PARENT_SCOPE)
-set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS} -T\"${CMAKE_CURRENT_LIST_DIR}/ld/samd51g19a_flash.ld\"" PARENT_SCOPE)
+set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -T\"${CMAKE_CURRENT_LIST_DIR}/ld/samd51g18a_flash.ld\"" PARENT_SCOPE)
+set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS} -T\"${CMAKE_CURRENT_LIST_DIR}/ld/samd51g18a_flash.ld\"" PARENT_SCOPE)
 set(CMAKE_SYSTEM_PROCESSOR "armv7-m" PARENT_SCOPE)
 
 # add them
 include_directories(${INCLUDE_DIRS} ${TOP_LEVEL_INCLUDE_DIRS} ${MODEL_INCLUDE_DIRS})
 
 # create our target
-add_library(codal-itsybitsy-m4 ${TOP_LEVEL_SOURCE_FILES} ${MODEL_SOURCE_FILES})
+add_library(codal-bbs-m4 ${TOP_LEVEL_SOURCE_FILES} ${MODEL_SOURCE_FILES})
 
 target_link_libraries(
-    codal-itsybitsy-m4
+    codal-bbs-m4
     codal-core
     codal-samd
 )
 
 # expose it to parent cmake.
-target_include_directories(codal-itsybitsy-m4 PUBLIC ${MODEL_INCLUDE_DIRS} ${TOP_LEVEL_INCLUDE_DIRS})
+target_include_directories(codal-bbs-m4 PUBLIC ${MODEL_INCLUDE_DIRS} ${TOP_LEVEL_INCLUDE_DIRS})
