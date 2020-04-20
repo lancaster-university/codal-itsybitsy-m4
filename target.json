@@ -1,6 +1,6 @@
 {
     "device":"ITSYBITSY_M4",
-    "processor":"ATSAMD51G19A",
+    "processor":"ATSAMD51G18A",
     "architecture":"CORTEX_M4",
     "toolchain":"ARM_GCC",
     "post_process":"python ./utils/uf2conv.py  -b 0x00004000 -o <OUTPUT_HEX_DESTINATION>/<OUTPUT_HEX_NAME>.uf2 -c <OUTPUT_BIN_LOCATION>",
@@ -45,7 +45,7 @@
         "PROTOTYPE_SERCOM_I2CM_SYNC": "SERCOM1",
         "PROTOTYPE_SERCOM_USART_ASYNC": "SERCOM2"
     },
-    "definitions":" -DSAMDX1 -D__SAMD51J19A__",
+    "definitions":" -DSAMDX1 -D__SAMD51J18A__",
     "cmake_definitions":{
     },
     "cpu_opts":"-mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16",
