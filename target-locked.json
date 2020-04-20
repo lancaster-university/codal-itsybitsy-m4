@@ -40,7 +40,8 @@
         "USB_MAX_PKT_SIZE": 64, 
         "USE_ACCEL_LSB": 0, 
         "USE_FULL_ASSERT": 1
-    }, 
+    },
+     
     "cpp_flags": "-std=c++11 -fwrapv -fno-rtti -fno-threadsafe-statics -fno-exceptions -fno-unwind-tables -Wl,--gc-sections -Wl,--sort-common -Wl,--sort-section=alignment -Wno-array-bounds", 
     "cpu_opts": "-mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16", 
     "definitions": " -DSAMDX1 -D__SAMD51J18A__", 
