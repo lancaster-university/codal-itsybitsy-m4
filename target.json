@@ -1,5 +1,5 @@
 {
-    "device":"ITSYBITSY_M4",
+    "device":"BBS_M4",
     "processor":"ATSAMD51G18A",
     "architecture":"CORTEX_M4",
     "toolchain":"ARM_GCC",
