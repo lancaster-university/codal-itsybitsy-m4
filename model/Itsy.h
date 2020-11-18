@@ -52,7 +52,6 @@ DEALINGS IN THE SOFTWARE.
 #include "SAMDTCTimer.h"
 
 #include "ZSingleWireSerial.h"
-#include "JACDAC.h"
 
 // Status flag values
 #define DEVICE_INITIALIZED                    0x01
@@ -78,9 +77,6 @@ namespace codal
             ZI2C                    i2c;
 
             ZSingleWireSerial       sws;
-            JDPhysicalLayer         bus;
-            JACDAC                  jacdac;
-
 
             /**
              * Constructor.

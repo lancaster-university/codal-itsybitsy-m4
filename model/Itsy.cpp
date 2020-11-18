@@ -44,9 +44,7 @@ Itsy::Itsy() :
     io(),
     spi(io.mosi, io.miso, io.sck),
     i2c(io.sda, io.scl),
-    sws(io.a4),
-    bus(sws, tc2),
-    jacdac(bus)
+    sws(io.a4)
 {
     // Clear our status
     status = 0;
